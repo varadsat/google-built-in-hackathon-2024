@@ -4,17 +4,18 @@
   "manifest_version": 3,
   "description": "Get a summary of the product currently opened on amazon.",
   "trial_tokens": [
+    "AhH+Eo1a30oxTeZ2dbsqeTvNuvyilSJMoLnt9O6q5Qpw00w8nd6guYnvqLPNfbtH0+G5wBaICvAt67OsHp0tvwUAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vaGdjbWNpcHBvcGpsaW9wbGZnb2lhZ2ZrZG9wZGVtbWMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9",
     "AkGcfoMTs5K71isPlCiY033XA9HKSjUJvPCF6K56eqY7mAUAsR7NDbmIWDjomLgCREuOS38XAuafVTz209utDwQAAABzeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vamdrYm1sZmZlYWRtZWZqZmdrY2tmYnBja3Bvb2loY2UiLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ=="
   ],
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting","aiLanguageModelOriginTrial"],
   "host_permissions": ["https://www.amazon.in/*"],
   "content_scripts": [
     {
       "matches": ["https://www.amazon.in/*"],
-      "js": ["scripts/content.js"]  
+      "js": ["scripts/content.js", "scripts/purify.min.js"]  
     }
   ],
   "action": {
