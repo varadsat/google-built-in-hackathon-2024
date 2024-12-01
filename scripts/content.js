@@ -34,6 +34,7 @@ function scrapeData() {
       })
       .catch(error => console.error("Fetch failed:", error));
   } else {
+    chrome.runtime.sendMessage({ action: "scrapedData", data: '<h3>Trying searching for a product.<h3/>' });
     console.error("Element not found with the given selector.");
   }
 }

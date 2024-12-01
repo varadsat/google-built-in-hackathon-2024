@@ -1,16 +1,20 @@
 {
   "name": "Product Review Reviewer",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version": 3,
   "description": "Get a summary of the product currently opened on Amazon.",
   "background": {
     "service_worker": "background.js"
   },
+  "trial_tokens": [
+    "Av0uef32+jynPpDk79WeSn41kl8Alns8ofmJL/wrEnMVnl84u7vVDQ9yFLZ3JZtXasfe1eNwnVrodjTXyjqs9AMAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vZ21vZW5nb2xmaGhjYWJkamlhbmptamhmb21lYmlibm4iLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"
+  ],
   "permissions": [
     "sidePanel",
     "activeTab",
     "scripting",
-    "storage"
+    "storage",
+    "aiLanguageModelOriginTrial"
   ],
   "host_permissions": [
     "https://www.amazon.in/*"
@@ -23,7 +27,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["sidepanel/*", "sidepanel/panel.html", "scripts/panel.js"],
+      "resources": ["sidepanel/*", "sidepanel/panel.html", "sidepanel/panel.js"],
       "matches": ["<all_urls>"]
     }
   ],
